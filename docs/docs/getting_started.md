@@ -173,8 +173,10 @@ Now that we've loaded our data into Indexify, we can then query our list of down
 
 ```python
 from indexify import IndexifyClient
+from openai import OpenAI
 
 client = IndexifyClient()
+client_openai = OpenAI()
 
 def query_database(question: str, index: str, top_k=3):
     retrieved_results = client.search_index(name=index, query=question, top_k=top_k) #(1)!
